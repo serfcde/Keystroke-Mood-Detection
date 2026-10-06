@@ -1,0 +1,20 @@
+<section id="pipeline" data-transition="fade" style="background:#E9EEF2;color:#1B2430;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#2F6FB0">Pipeline</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:600;line-height:1.1">From raw keystrokes to an explained estimate</h2>
+</div>
+<div style="display:flex;align-items:center;gap:16px">
+<div style="flex:1;background:#FFFFFF;border:1px solid #C9D2DC;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600">Clean</h3><p style="font-size:24px;color:#4A5568">audit, fix, strip letters</p></div>
+<x-connector style="width:48px;color:#2F6FB0"></x-connector>
+<div style="flex:1;background:#FFFFFF;border:1px solid #C9D2DC;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600">Window</h3><p style="font-size:24px;color:#4A5568">30 s, 9 features</p></div>
+<x-connector style="width:48px;color:#2F6FB0"></x-connector>
+<div style="flex:1;background:#FFFFFF;border:1px solid #C9D2DC;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600">Personalise</h3><p style="font-size:24px;color:#4A5568">z vs own baseline, recent trend</p></div>
+<x-connector style="width:48px;color:#2F6FB0"></x-connector>
+<div style="flex:1;background:#FFFFFF;border:1px solid #C9D2DC;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600">Classify</h3><p style="font-size:24px;color:#4A5568">RF, XGBoost, SVM</p></div>
+<x-connector style="width:48px;color:#2F6FB0"></x-connector>
+<div style="flex:1;background:#1B2430;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600;color:#F6F4EF">Explain</h3><p style="font-size:24px;color:#BFCAD6">JSON → LLM → dashboard</p></div>
+</div>
+<p style="font-size:30px;color:#4A5568;line-height:1.45;width:1500px">Every split is grouped by user: the people we test on are never seen in training. Headline metric is balanced accuracy, where any constant guess scores 0.25.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">4 · src/features.py · baseline.py · model.py · llm.py · app/dashboard.py</p>
+<aside>Walk left to right. The personal baseline is leave-one-out and label-free: each window is compared with the same user's other windows, so a new user only needs unlabelled typing. Grouping by user matters; a random row split would let the model recognise people rather than moods.</aside>
+</section>

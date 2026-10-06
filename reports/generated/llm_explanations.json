@@ -1,0 +1,735 @@
+[
+  {
+    "window": {
+      "user_id": "G014",
+      "session_id": "1",
+      "window": "0"
+    },
+    "true_window_mood": "positive",
+    "payload": {
+      "current": {
+        "typing_speed": 7.126,
+        "mean_dwell": 107.033,
+        "std_dwell": 20.306,
+        "mean_flight": 125.59,
+        "std_flight": 38.006,
+        "mean_pause": 1599.14,
+        "pause_count": 1.0,
+        "long_pause_count": 0.0,
+        "correction_rate": 0.0
+      },
+      "baseline_deviation_z": {
+        "typing_speed": 1.71,
+        "mean_dwell": -0.84,
+        "std_dwell": -0.22,
+        "mean_flight": -0.57,
+        "std_flight": -0.88,
+        "mean_pause": -0.28,
+        "pause_count": -1.12,
+        "long_pause_count": -0.96,
+        "correction_rate": 0.0
+      },
+      "recent_trend_vs_previous_windows": {
+        "typing_speed": "stable",
+        "mean_dwell": "stable",
+        "std_dwell": "stable",
+        "mean_flight": "stable",
+        "std_flight": "stable",
+        "mean_pause": "stable",
+        "pause_count": "stable",
+        "long_pause_count": "stable",
+        "correction_rate": "stable"
+      },
+      "windows_of_history": 0,
+      "ml_prediction": {
+        "state": "positive",
+        "confidence": 0.98,
+        "class_probabilities": {
+          "calm": 0.01,
+          "positive": 0.98,
+          "stressed": 0.0,
+          "low": 0.0
+        }
+      },
+      "model_reliability": {
+        "benchmark": "synthetic",
+        "cv_balanced_accuracy": 0.757,
+        "chance_balanced_accuracy": 0.25,
+        "window_label_purity": 1.0
+      },
+      "units": {
+        "typing_speed": "keys/s",
+        "dwell/flight/pause": "ms",
+        "correction_rate": "fraction of keys"
+      }
+    },
+    "explanation": {
+      "predicted_state": "positive",
+      "agrees_with_ml": true,
+      "confidence": "low",
+      "explanation": "The classifier suggests 'positive' (p=0.98). The largest departures from this user's usual typing are: typing speed above baseline (+1.7 SD); number of pauses below baseline (-1.1 SD); number of long pauses below baseline (-1.0 SD).",
+      "important_features": [
+        "typing speed above baseline (+1.7 SD)",
+        "number of pauses below baseline (-1.1 SD)",
+        "number of long pauses below baseline (-1.0 SD)"
+      ],
+      "uncertainty_note": "Template explanation (no LLM call). The model's cross-validated balanced accuracy on unseen users is 0.76 vs 0.25 chance, on synthetic labels."
+    },
+    "source": "template",
+    "grounding": {
+      "features_referenced": [
+        "typing_speed",
+        "pause_count",
+        "long_pause_count"
+      ],
+      "references_any_feature": true,
+      "matches_ml_state": true,
+      "claims_agreement": true,
+      "confidence_label": "low",
+      "mentions_uncertainty": true,
+      "diagnostic_language": false
+    }
+  },
+  {
+    "window": {
+      "user_id": "G014",
+      "session_id": "2",
+      "window": "0"
+    },
+    "true_window_mood": "calm",
+    "payload": {
+      "current": {
+        "typing_speed": 4.2,
+        "mean_dwell": 111.54,
+        "std_dwell": 18.398,
+        "mean_flight": 132.347,
+        "std_flight": 44.214,
+        "mean_pause": 1894.992,
+        "pause_count": 6.0,
+        "long_pause_count": 2.0,
+        "correction_rate": 0.0
+      },
+      "baseline_deviation_z": {
+        "typing_speed": -1.05,
+        "mean_dwell": 0.48,
+        "std_dwell": -0.82,
+        "mean_flight": 0.25,
+        "std_flight": 0.33,
+        "mean_pause": -0.17,
+        "pause_count": 1.07,
+        "long_pause_count": 0.27,
+        "correction_rate": 0.0
+      },
+      "recent_trend_vs_previous_windows": {
+        "typing_speed": "decreasing",
+        "mean_dwell": "increasing",
+        "std_dwell": "decreasing",
+        "mean_flight": "increasing",
+        "std_flight": "increasing",
+        "mean_pause": "stable",
+        "pause_count": "increasing",
+        "long_pause_count": "increasing",
+        "correction_rate": "stable"
+      },
+      "windows_of_history": 1,
+      "ml_prediction": {
+        "state": "calm",
+        "confidence": 0.91,
+        "class_probabilities": {
+          "calm": 0.91,
+          "positive": 0.07,
+          "stressed": 0.0,
+          "low": 0.01
+        }
+      },
+      "model_reliability": {
+        "benchmark": "synthetic",
+        "cv_balanced_accuracy": 0.757,
+        "chance_balanced_accuracy": 0.25,
+        "window_label_purity": 1.0
+      },
+      "units": {
+        "typing_speed": "keys/s",
+        "dwell/flight/pause": "ms",
+        "correction_rate": "fraction of keys"
+      }
+    },
+    "explanation": {
+      "predicted_state": "calm",
+      "agrees_with_ml": true,
+      "confidence": "low",
+      "explanation": "The classifier suggests 'calm' (p=0.91). The largest departures from this user's usual typing are: number of pauses above baseline (+1.1 SD); typing speed below baseline (-1.1 SD); dwell variability below baseline (-0.8 SD).",
+      "important_features": [
+        "number of pauses above baseline (+1.1 SD)",
+        "typing speed below baseline (-1.1 SD)",
+        "dwell variability below baseline (-0.8 SD)"
+      ],
+      "uncertainty_note": "Template explanation (no LLM call). The model's cross-validated balanced accuracy on unseen users is 0.76 vs 0.25 chance, on synthetic labels."
+    },
+    "source": "template",
+    "grounding": {
+      "features_referenced": [
+        "typing_speed",
+        "mean_dwell",
+        "std_dwell",
+        "pause_count"
+      ],
+      "references_any_feature": true,
+      "matches_ml_state": true,
+      "claims_agreement": true,
+      "confidence_label": "low",
+      "mentions_uncertainty": true,
+      "diagnostic_language": false
+    }
+  },
+  {
+    "window": {
+      "user_id": "G014",
+      "session_id": "3",
+      "window": "0"
+    },
+    "true_window_mood": "stressed",
+    "payload": {
+      "current": {
+        "typing_speed": 4.158,
+        "mean_dwell": 102.752,
+        "std_dwell": 28.433,
+        "mean_flight": 117.272,
+        "std_flight": 47.998,
+        "mean_pause": 2171.302,
+        "pause_count": 6.0,
+        "long_pause_count": 5.0,
+        "correction_rate": 0.0
+      },
+      "baseline_deviation_z": {
+        "typing_speed": -1.09,
+        "mean_dwell": -2.35,
+        "std_dwell": 2.67,
+        "mean_flight": -1.67,
+        "std_flight": 1.09,
+        "mean_pause": -0.07,
+        "pause_count": 1.07,
+        "long_pause_count": 2.37,
+        "correction_rate": 0.0
+      },
+      "recent_trend_vs_previous_windows": {
+        "typing_speed": "decreasing",
+        "mean_dwell": "decreasing",
+        "std_dwell": "increasing",
+        "mean_flight": "decreasing",
+        "std_flight": "increasing",
+        "mean_pause": "stable",
+        "pause_count": "increasing",
+        "long_pause_count": "increasing",
+        "correction_rate": "stable"
+      },
+      "windows_of_history": 2,
+      "ml_prediction": {
+        "state": "stressed",
+        "confidence": 1.0,
+        "class_probabilities": {
+          "calm": 0.0,
+          "positive": 0.0,
+          "stressed": 1.0,
+          "low": 0.0
+        }
+      },
+      "model_reliability": {
+        "benchmark": "synthetic",
+        "cv_balanced_accuracy": 0.757,
+        "chance_balanced_accuracy": 0.25,
+        "window_label_purity": 1.0
+      },
+      "units": {
+        "typing_speed": "keys/s",
+        "dwell/flight/pause": "ms",
+        "correction_rate": "fraction of keys"
+      }
+    },
+    "explanation": {
+      "predicted_state": "stressed",
+      "agrees_with_ml": true,
+      "confidence": "low",
+      "explanation": "The classifier suggests 'stressed' (p=1.00). The largest departures from this user's usual typing are: dwell variability above baseline (+2.7 SD); number of long pauses above baseline (+2.4 SD); key hold (dwell) time below baseline (-2.4 SD).",
+      "important_features": [
+        "dwell variability above baseline (+2.7 SD)",
+        "number of long pauses above baseline (+2.4 SD)",
+        "key hold (dwell) time below baseline (-2.4 SD)"
+      ],
+      "uncertainty_note": "Template explanation (no LLM call). The model's cross-validated balanced accuracy on unseen users is 0.76 vs 0.25 chance, on synthetic labels."
+    },
+    "source": "template",
+    "grounding": {
+      "features_referenced": [
+        "mean_dwell",
+        "std_dwell",
+        "pause_count",
+        "long_pause_count"
+      ],
+      "references_any_feature": true,
+      "matches_ml_state": true,
+      "claims_agreement": true,
+      "confidence_label": "low",
+      "mentions_uncertainty": true,
+      "diagnostic_language": false
+    }
+  },
+  {
+    "window": {
+      "user_id": "G014",
+      "session_id": "4",
+      "window": "0"
+    },
+    "true_window_mood": "stressed",
+    "payload": {
+      "current": {
+        "typing_speed": 6.128,
+        "mean_dwell": 104.767,
+        "std_dwell": 25.91,
+        "mean_flight": 123.562,
+        "std_flight": 48.172,
+        "mean_pause": 2104.578,
+        "pause_count": 2.0,
+        "long_pause_count": 1.0,
+        "correction_rate": 0.0
+      },
+      "baseline_deviation_z": {
+        "typing_speed": 0.71,
+        "mean_dwell": -1.58,
+        "std_dwell": 1.6,
+        "mean_flight": -0.82,
+        "std_flight": 1.12,
+        "mean_pause": -0.1,
+        "pause_count": -0.66,
+        "long_pause_count": -0.33,
+        "correction_rate": 0.0
+      },
+      "recent_trend_vs_previous_windows": {
+        "typing_speed": "increasing",
+        "mean_dwell": "decreasing",
+        "std_dwell": "increasing",
+        "mean_flight": "stable",
+        "std_flight": "increasing",
+        "mean_pause": "stable",
+        "pause_count": "decreasing",
+        "long_pause_count": "decreasing",
+        "correction_rate": "stable"
+      },
+      "windows_of_history": 3,
+      "ml_prediction": {
+        "state": "stressed",
+        "confidence": 0.99,
+        "class_probabilities": {
+          "calm": 0.01,
+          "positive": 0.0,
+          "stressed": 0.99,
+          "low": 0.0
+        }
+      },
+      "model_reliability": {
+        "benchmark": "synthetic",
+        "cv_balanced_accuracy": 0.757,
+        "chance_balanced_accuracy": 0.25,
+        "window_label_purity": 1.0
+      },
+      "units": {
+        "typing_speed": "keys/s",
+        "dwell/flight/pause": "ms",
+        "correction_rate": "fraction of keys"
+      }
+    },
+    "explanation": {
+      "predicted_state": "stressed",
+      "agrees_with_ml": true,
+      "confidence": "low",
+      "explanation": "The classifier suggests 'stressed' (p=0.99). The largest departures from this user's usual typing are: dwell variability above baseline (+1.6 SD); key hold (dwell) time below baseline (-1.6 SD); flight variability above baseline (+1.1 SD).",
+      "important_features": [
+        "dwell variability above baseline (+1.6 SD)",
+        "key hold (dwell) time below baseline (-1.6 SD)",
+        "flight variability above baseline (+1.1 SD)"
+      ],
+      "uncertainty_note": "Template explanation (no LLM call). The model's cross-validated balanced accuracy on unseen users is 0.76 vs 0.25 chance, on synthetic labels."
+    },
+    "source": "template",
+    "grounding": {
+      "features_referenced": [
+        "mean_dwell",
+        "std_dwell",
+        "mean_flight",
+        "std_flight"
+      ],
+      "references_any_feature": true,
+      "matches_ml_state": true,
+      "claims_agreement": true,
+      "confidence_label": "low",
+      "mentions_uncertainty": true,
+      "diagnostic_language": false
+    }
+  },
+  {
+    "window": {
+      "user_id": "G014",
+      "session_id": "5",
+      "window": "0"
+    },
+    "true_window_mood": "calm",
+    "payload": {
+      "current": {
+        "typing_speed": 6.775,
+        "mean_dwell": 111.004,
+        "std_dwell": 17.628,
+        "mean_flight": 131.124,
+        "std_flight": 38.52,
+        "mean_pause": 1779.898,
+        "pause_count": 1.0,
+        "long_pause_count": 0.0,
+        "correction_rate": 0.0
+      },
+      "baseline_deviation_z": {
+        "typing_speed": 1.33,
+        "mean_dwell": 0.32,
+        "std_dwell": -1.08,
+        "mean_flight": 0.1,
+        "std_flight": -0.77,
+        "mean_pause": -0.21,
+        "pause_count": -1.12,
+        "long_pause_count": -0.96,
+        "correction_rate": 0.0
+      },
+      "recent_trend_vs_previous_windows": {
+        "typing_speed": "increasing",
+        "mean_dwell": "increasing",
+        "std_dwell": "decreasing",
+        "mean_flight": "increasing",
+        "std_flight": "decreasing",
+        "mean_pause": "stable",
+        "pause_count": "decreasing",
+        "long_pause_count": "decreasing",
+        "correction_rate": "stable"
+      },
+      "windows_of_history": 3,
+      "ml_prediction": {
+        "state": "positive",
+        "confidence": 0.71,
+        "class_probabilities": {
+          "calm": 0.29,
+          "positive": 0.71,
+          "stressed": 0.0,
+          "low": 0.0
+        }
+      },
+      "model_reliability": {
+        "benchmark": "synthetic",
+        "cv_balanced_accuracy": 0.757,
+        "chance_balanced_accuracy": 0.25,
+        "window_label_purity": 1.0
+      },
+      "units": {
+        "typing_speed": "keys/s",
+        "dwell/flight/pause": "ms",
+        "correction_rate": "fraction of keys"
+      }
+    },
+    "explanation": {
+      "predicted_state": "positive",
+      "agrees_with_ml": true,
+      "confidence": "low",
+      "explanation": "The classifier suggests 'positive' (p=0.71). The largest departures from this user's usual typing are: typing speed above baseline (+1.3 SD); number of pauses below baseline (-1.1 SD); dwell variability below baseline (-1.1 SD).",
+      "important_features": [
+        "typing speed above baseline (+1.3 SD)",
+        "number of pauses below baseline (-1.1 SD)",
+        "dwell variability below baseline (-1.1 SD)"
+      ],
+      "uncertainty_note": "Template explanation (no LLM call). The model's cross-validated balanced accuracy on unseen users is 0.76 vs 0.25 chance, on synthetic labels."
+    },
+    "source": "template",
+    "grounding": {
+      "features_referenced": [
+        "typing_speed",
+        "mean_dwell",
+        "std_dwell",
+        "pause_count"
+      ],
+      "references_any_feature": true,
+      "matches_ml_state": true,
+      "claims_agreement": true,
+      "confidence_label": "low",
+      "mentions_uncertainty": true,
+      "diagnostic_language": false
+    }
+  },
+  {
+    "window": {
+      "user_id": "G014",
+      "session_id": "20",
+      "window": "0"
+    },
+    "true_window_mood": "positive",
+    "payload": {
+      "current": {
+        "typing_speed": 5.166,
+        "mean_dwell": 109.228,
+        "std_dwell": 18.536,
+        "mean_flight": 119.023,
+        "std_flight": 37.206,
+        "mean_pause": 1982.915,
+        "pause_count": 4.0,
+        "long_pause_count": 2.0,
+        "correction_rate": 0.0
+      },
+      "baseline_deviation_z": {
+        "typing_speed": -0.16,
+        "mean_dwell": -0.19,
+        "std_dwell": -0.78,
+        "mean_flight": -1.42,
+        "std_flight": -1.04,
+        "mean_pause": -0.14,
+        "pause_count": 0.19,
+        "long_pause_count": 0.27,
+        "correction_rate": 0.0
+      },
+      "recent_trend_vs_previous_windows": {
+        "typing_speed": "stable",
+        "mean_dwell": "stable",
+        "std_dwell": "decreasing",
+        "mean_flight": "decreasing",
+        "std_flight": "decreasing",
+        "mean_pause": "stable",
+        "pause_count": "stable",
+        "long_pause_count": "decreasing",
+        "correction_rate": "stable"
+      },
+      "windows_of_history": 3,
+      "ml_prediction": {
+        "state": "positive",
+        "confidence": 0.95,
+        "class_probabilities": {
+          "calm": 0.04,
+          "positive": 0.95,
+          "stressed": 0.01,
+          "low": 0.0
+        }
+      },
+      "model_reliability": {
+        "benchmark": "synthetic",
+        "cv_balanced_accuracy": 0.757,
+        "chance_balanced_accuracy": 0.25,
+        "window_label_purity": 1.0
+      },
+      "units": {
+        "typing_speed": "keys/s",
+        "dwell/flight/pause": "ms",
+        "correction_rate": "fraction of keys"
+      }
+    },
+    "explanation": {
+      "predicted_state": "positive",
+      "agrees_with_ml": true,
+      "confidence": "low",
+      "explanation": "The classifier suggests 'positive' (p=0.95). The largest departures from this user's usual typing are: time between keys (flight) below baseline (-1.4 SD); flight variability below baseline (-1.0 SD); dwell variability below baseline (-0.8 SD).",
+      "important_features": [
+        "time between keys (flight) below baseline (-1.4 SD)",
+        "flight variability below baseline (-1.0 SD)",
+        "dwell variability below baseline (-0.8 SD)"
+      ],
+      "uncertainty_note": "Template explanation (no LLM call). The model's cross-validated balanced accuracy on unseen users is 0.76 vs 0.25 chance, on synthetic labels."
+    },
+    "source": "template",
+    "grounding": {
+      "features_referenced": [
+        "mean_dwell",
+        "std_dwell",
+        "mean_flight",
+        "std_flight"
+      ],
+      "references_any_feature": true,
+      "matches_ml_state": true,
+      "claims_agreement": true,
+      "confidence_label": "low",
+      "mentions_uncertainty": true,
+      "diagnostic_language": false
+    }
+  },
+  {
+    "window": {
+      "user_id": "G018",
+      "session_id": "1",
+      "window": "0"
+    },
+    "true_window_mood": "low",
+    "payload": {
+      "current": {
+        "typing_speed": 3.433,
+        "mean_dwell": 100.559,
+        "std_dwell": 16.985,
+        "mean_flight": 182.74,
+        "std_flight": 71.777,
+        "mean_pause": 1733.851,
+        "pause_count": 7.0,
+        "long_pause_count": 3.0,
+        "correction_rate": 0.0
+      },
+      "baseline_deviation_z": {
+        "typing_speed": -1.44,
+        "mean_dwell": 1.41,
+        "std_dwell": -0.72,
+        "mean_flight": 2.45,
+        "std_flight": 1.09,
+        "mean_pause": -0.09,
+        "pause_count": 1.95,
+        "long_pause_count": 1.13,
+        "correction_rate": 0.0
+      },
+      "recent_trend_vs_previous_windows": {
+        "typing_speed": "stable",
+        "mean_dwell": "stable",
+        "std_dwell": "stable",
+        "mean_flight": "stable",
+        "std_flight": "stable",
+        "mean_pause": "stable",
+        "pause_count": "stable",
+        "long_pause_count": "stable",
+        "correction_rate": "stable"
+      },
+      "windows_of_history": 0,
+      "ml_prediction": {
+        "state": "low",
+        "confidence": 0.99,
+        "class_probabilities": {
+          "calm": 0.01,
+          "positive": 0.0,
+          "stressed": 0.0,
+          "low": 0.99
+        }
+      },
+      "model_reliability": {
+        "benchmark": "synthetic",
+        "cv_balanced_accuracy": 0.757,
+        "chance_balanced_accuracy": 0.25,
+        "window_label_purity": 1.0
+      },
+      "units": {
+        "typing_speed": "keys/s",
+        "dwell/flight/pause": "ms",
+        "correction_rate": "fraction of keys"
+      }
+    },
+    "explanation": {
+      "predicted_state": "low",
+      "agrees_with_ml": true,
+      "confidence": "low",
+      "explanation": "The classifier suggests 'low' (p=0.99). The largest departures from this user's usual typing are: time between keys (flight) above baseline (+2.5 SD); number of pauses above baseline (+1.9 SD); typing speed below baseline (-1.4 SD).",
+      "important_features": [
+        "time between keys (flight) above baseline (+2.5 SD)",
+        "number of pauses above baseline (+1.9 SD)",
+        "typing speed below baseline (-1.4 SD)"
+      ],
+      "uncertainty_note": "Template explanation (no LLM call). The model's cross-validated balanced accuracy on unseen users is 0.76 vs 0.25 chance, on synthetic labels."
+    },
+    "source": "template",
+    "grounding": {
+      "features_referenced": [
+        "typing_speed",
+        "mean_flight",
+        "pause_count"
+      ],
+      "references_any_feature": true,
+      "matches_ml_state": true,
+      "claims_agreement": true,
+      "confidence_label": "low",
+      "mentions_uncertainty": true,
+      "diagnostic_language": false
+    }
+  },
+  {
+    "window": {
+      "user_id": "G018",
+      "session_id": "13",
+      "window": "0"
+    },
+    "true_window_mood": "low",
+    "payload": {
+      "current": {
+        "typing_speed": 4.061,
+        "mean_dwell": 99.201,
+        "std_dwell": 18.27,
+        "mean_flight": 167.148,
+        "std_flight": 73.911,
+        "mean_pause": 1485.444,
+        "pause_count": 6.0,
+        "long_pause_count": 2.0,
+        "correction_rate": 0.0
+      },
+      "baseline_deviation_z": {
+        "typing_speed": -0.81,
+        "mean_dwell": 1.08,
+        "std_dwell": -0.24,
+        "mean_flight": 1.22,
+        "std_flight": 1.37,
+        "mean_pause": -0.41,
+        "pause_count": 1.3,
+        "long_pause_count": 0.25,
+        "correction_rate": 0.0
+      },
+      "recent_trend_vs_previous_windows": {
+        "typing_speed": "decreasing",
+        "mean_dwell": "increasing",
+        "std_dwell": "stable",
+        "mean_flight": "increasing",
+        "std_flight": "increasing",
+        "mean_pause": "decreasing",
+        "pause_count": "increasing",
+        "long_pause_count": "stable",
+        "correction_rate": "stable"
+      },
+      "windows_of_history": 3,
+      "ml_prediction": {
+        "state": "low",
+        "confidence": 0.99,
+        "class_probabilities": {
+          "calm": 0.01,
+          "positive": 0.0,
+          "stressed": 0.0,
+          "low": 0.99
+        }
+      },
+      "model_reliability": {
+        "benchmark": "synthetic",
+        "cv_balanced_accuracy": 0.757,
+        "chance_balanced_accuracy": 0.25,
+        "window_label_purity": 1.0
+      },
+      "units": {
+        "typing_speed": "keys/s",
+        "dwell/flight/pause": "ms",
+        "correction_rate": "fraction of keys"
+      }
+    },
+    "explanation": {
+      "predicted_state": "low",
+      "agrees_with_ml": true,
+      "confidence": "low",
+      "explanation": "The classifier suggests 'low' (p=0.99). The largest departures from this user's usual typing are: flight variability above baseline (+1.4 SD); number of pauses above baseline (+1.3 SD); time between keys (flight) above baseline (+1.2 SD).",
+      "important_features": [
+        "flight variability above baseline (+1.4 SD)",
+        "number of pauses above baseline (+1.3 SD)",
+        "time between keys (flight) above baseline (+1.2 SD)"
+      ],
+      "uncertainty_note": "Template explanation (no LLM call). The model's cross-validated balanced accuracy on unseen users is 0.76 vs 0.25 chance, on synthetic labels."
+    },
+    "source": "template",
+    "grounding": {
+      "features_referenced": [
+        "mean_flight",
+        "std_flight",
+        "pause_count"
+      ],
+      "references_any_feature": true,
+      "matches_ml_state": true,
+      "claims_agreement": true,
+      "confidence_label": "low",
+      "mentions_uncertainty": true,
+      "diagnostic_language": false
+    }
+  }
+]

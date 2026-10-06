@@ -1,0 +1,16 @@
+<section id="results-generated" data-transition="fade" style="background:#F6F4EF;color:#1B2430;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#2F6FB0">Results · generated dataset</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1">With coherent labels, personalisation does the work</h2>
+</div>
+<div style="display:flex;gap:40px;align-items:center">
+<img src="/_blob/75a24db47e96a24db8cf52666efc2ee6" alt="Bar chart of balanced accuracy: about 0.54 for raw features, jumping to about 0.77 once personal-baseline features are added, flat after that" style="width:1080px;height:480px;object-fit:contain;background:#FFFFFF;border-radius:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:600;color:#2F6FB0;line-height:1.1">0.54 → 0.78</p><p style="font-size:26px;color:#4A5568">Random Forest, adding the personal baseline (A → B)</p></div>
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:600;color:#1B2430;line-height:1.1">≈ 0</p><p style="font-size:26px;color:#4A5568">from temporal trends, B → C (−0.004 to +0.03)</p></div>
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:600;color:#1B2430;line-height:1.1">0.77</p><p style="font-size:26px;color:#4A5568">leave-one-user-out, Random Forest</p></div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">10 · reports/generated/results.json · top SHAP features: flight and dwell z-scores</p>
+<aside>Same code, different labels. The jump from A to B is the personal baseline: SHAP shows the model relies most on how far flight and dwell are from the user's own normal. Temporal change features add nothing, likely because a change score is near zero whenever the mood stays the same between sessions.</aside>
+</section>

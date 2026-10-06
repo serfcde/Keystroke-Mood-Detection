@@ -1,0 +1,16 @@
+<section id="method" data-transition="fade" style="background:#F6F4EF;color:#1B2430;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#2F6FB0">Method · ablation design</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:600;line-height:1.1">Each feature set adds one idea</h2>
+</div>
+<table style="font-size:28px;color:#1B2430">
+<tr><th style="width:12%;text-align:left">Set</th><th style="width:48%;text-align:left">Features</th><th style="width:40%;text-align:left">Tests</th></tr>
+<tr><td>A</td><td>9 window features: speed, dwell, flight, pauses, corrections</td><td>H1: any signal?</td></tr>
+<tr><td>B</td><td>A + z-score against the user's own other windows</td><td>H2: personalisation</td></tr>
+<tr><td>C</td><td>B + change vs the previous 3 windows</td><td>H3: temporal context</td></tr>
+<tr><td>E</td><td>C + optional extras: CVs, bursts, entropy</td><td>PRD §9 extensions</td></tr>
+</table>
+<p style="font-size:28px;color:#4A5568;line-height:1.45;width:1600px">Models: Random Forest, XGBoost, SVM. Evaluation: 5-fold grouped by user, leave-one-user-out, 200-run label permutation test, majority-class baseline.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">8 · src/baseline.py · src/model.py</p>
+<aside>D in the PRD is the LLM layer, which explains rather than predicts, so it is not an accuracy row. The permutation test answers "is this better than luck?" by shuffling labels 200 times and re-running the whole grouped evaluation.</aside>
+</section>

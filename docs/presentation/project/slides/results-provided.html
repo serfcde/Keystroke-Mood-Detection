@@ -1,0 +1,16 @@
+<section id="results-provided" data-transition="fade" style="background:#F6F4EF;color:#1B2430;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#2F6FB0">Results · provided dataset</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1">Just above chance, but not luck</h2>
+</div>
+<div style="display:flex;gap:40px;align-items:center">
+<img src="/_blob/2d99bf7ff1add599cecce892374e0e37" alt="Bar chart of balanced accuracy for feature sets A, B, C and E: all models between 0.25 and 0.31, just above the 0.25 chance line" style="width:1080px;height:480px;object-fit:contain;background:#FFFFFF;border-radius:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:600;color:#2F6FB0;line-height:1.1">0.31</p><p style="font-size:26px;color:#4A5568">best balanced accuracy (chance 0.25)</p></div>
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:600;color:#1B2430;line-height:1.1">p = 0.02</p><p style="font-size:26px;color:#4A5568">permutation test, 200 shuffles</p></div>
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:600;color:#1B2430;line-height:1.1">63%</p><p style="font-size:26px;color:#4A5568">accuracy of always guessing calm</p></div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">9 · 5-fold user-grouped CV, mean ± std · reports/results.json</p>
+<aside>The models are statistically better than chance, but only slightly. Note that plain accuracy would mislead here: always guessing calm scores 63%, more than our models' roughly 50%, because most windows are labelled calm. That is why the headline metric is balanced accuracy.</aside>
+</section>

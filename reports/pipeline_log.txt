@@ -1,0 +1,44 @@
+1000 windows from 50 users
+         feature_set          model  accuracy_mean  accuracy_std  balanced_accuracy_mean  balanced_accuracy_std  macro_f1_mean  macro_f1_std
+                   - majority_class          0.630         0.057                   0.250                  0.000          0.193         0.011
+               A_raw  random_forest          0.436         0.044                   0.269                  0.021          0.263         0.010
+               A_raw        xgboost          0.417         0.052                   0.251                  0.032          0.245         0.028
+               A_raw            svm          0.332         0.025                   0.294                  0.081          0.243         0.032
+         B_+baseline  random_forest          0.493         0.050                   0.284                  0.031          0.281         0.032
+         B_+baseline        xgboost          0.492         0.037                   0.291                  0.018          0.289         0.016
+         B_+baseline            svm          0.382         0.042                   0.313                  0.029          0.271         0.017
+C_+baseline+temporal  random_forest          0.500         0.032                   0.288                  0.017          0.288         0.023
+C_+baseline+temporal        xgboost          0.496         0.036                   0.278                  0.018          0.276         0.018
+C_+baseline+temporal            svm          0.384         0.025                   0.302                  0.034          0.269         0.020
+        E_C+extended  random_forest          0.518         0.045                   0.291                  0.020          0.286         0.021
+        E_C+extended        xgboost          0.492         0.050                   0.279                  0.035          0.273         0.032
+        E_C+extended            svm          0.386         0.032                   0.302                  0.053          0.268         0.028
+permutation test: {'feature_set': 'C_+baseline+temporal', 'metric': 'balanced_accuracy', 'score': 0.2780485119699375, 'permuted_mean': 0.2488923199580335, 'permuted_95th': 0.2699906118520964, 'p_value': 0.01990049751243781, 'n_permutations': 200}
+         model          feature_set  accuracy  balanced_accuracy  macro_f1
+majority_class C_+baseline+temporal     0.630              0.250     0.193
+ random_forest C_+baseline+temporal     0.499              0.295     0.294
+       xgboost C_+baseline+temporal     0.480              0.279     0.274
+           svm C_+baseline+temporal     0.359              0.283     0.259
+regression: {
+ "valence/mean_predictor": {
+  "mae": 0.04065360681325582,
+  "rmse": 0.05043959004796601,
+  "r2": -0.0018955062182381965
+ },
+ "valence/xgboost": {
+  "mae": 0.04309257191284213,
+  "rmse": 0.05341542200142759,
+  "r2": -0.12360240480624873
+ },
+ "arousal/mean_predictor": {
+  "mae": 0.03380156187897104,
+  "rmse": 0.04259464129823232,
+  "r2": -0.0037508740042517807
+ },
+ "arousal/xgboost": {
+  "mae": 0.032905237245881735,
+  "rmse": 0.04183925431186671,
+  "r2": 0.03153511802879683
+ }
+}
+holdout xgboost: {'accuracy': 0.48, 'balanced_accuracy': 0.262, 'macro_f1': 0.262}
